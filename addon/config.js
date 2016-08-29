@@ -14,7 +14,7 @@ export default Em.Namespace.extend({
     var defaultConfig, newConfig;
     defaultConfig = this._configs.get('default');
     newConfig = Em.Object.create(config);
-    newConfig = Em.$.extend(true, newConfig, defaultConfig);
+    newConfig = Em.merge({}, newConfig, defaultConfig);
     return this._configs.set(name, newConfig);
   }
 });
